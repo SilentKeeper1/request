@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математичні розрахунки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Математичні розрахунки</h1>
+      <label for="username">Введіть число</label>
+      <input type="text" id="username" name="username" placeholder="Введіть число" required>
+<button id="myButton">Обчислити</button>
+    <p id="output"></p>
+ </body>
+<script>
+document.getElementById('myButton').addEventListener('click', function () {
+    const input = Number(document.getElementById('username').value);
+    if (isNaN(input)) {
+    }
+    const square = input * input;
+    const cube = input * input * input;
+    const remainder = input % 5;
+
+    document.getElementById('output').innerText = `Квадрат: ${square}\nКуб: ${cube}\nЗалишок від ділення на 5: ${remainder}`;
+});
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка парності</title>
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>Перевірка парного чи непарного числа</h2>
+    <input type="number" id="numberInput" placeholder="Введіть число">
+    <button onclick="checkNumber()">Перевірити</button>
+    <h5>Для перегляду результату натисніть f12</h5>
+    <script>
+        function isEven(number) {
+            return number % 2 === 0;
+        }
+
+        function checkNumber() {
+            let inputField = document.getElementById("numberInput");
+            let number = parseInt(inputField.value);
+
+            if (isNaN(number)) {
+                console.log("Будь ласка, введіть коректне число.");
+                return;
+            }
+
+            if (isEven(number)) {
+                console.log(`${number} є парним числом.`);
+            } else {
+                console.log(`${number} є непарним числом.`);
+            }
+        }
+    </script>
+</body>
+</html>
