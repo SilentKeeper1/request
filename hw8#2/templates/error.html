@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Помилка 404</title>
+</head>
+<body>
+    <h1>Сторінка не знайдена!</h1>
+    <p>Вибачте, але ми не змогли знайти запитувану сторінку.</p>
+    <p><a href="{{ url_for('home') }}">Повернутися на головну сторінку</a></p>
+</body>
+</html>
