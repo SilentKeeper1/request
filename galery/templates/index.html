@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Gallery</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff6f;
+            overflow: hidden;
+        }
+
+        .block {
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            border-radius: 15px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .block.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="block active" id="block1" style="background-image: url('{{ url_for('static', filename='images/izvyhpo.jpg') }}');"></div>
+    <div class="block" id="block2" style="background-image: url('{{ url_for('static', filename='images/2016-12-08-mount-fuji-l8P7.jpg') }}');"></div>
+    <div class="block" id="block3" style="background-image: url('{{ url_for('static', filename='images/1710654454858213.jpg') }}');"></div>
+
+    <script>
+        let blocks = document.querySelectorAll(".block");
+        let index = 0;
+
+        function cycleBlocks() {
+            blocks[index].classList.remove("active");
+            index = (index + 1) % blocks.length;
+            blocks[index].classList.add("active");
+        }
+
+        setInterval(cycleBlocks, 5000);
+    </script>
+</body>
+</html>
