@@ -4,10 +4,10 @@ from typing import Optional
 
 app = FastAPI()
 
-# Список задач
+
 tasks = []
 
-# Модель завдання
+
 class Task(BaseModel):
     name: str
     description: str
